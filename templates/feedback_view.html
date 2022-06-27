@@ -1,0 +1,54 @@
+<!--{% extends 'index.html' %}-->
+<!--{% load crispy_forms_tags %}-->
+<!--{% block content %}-->
+<!--<div class="col-lg-12 grid-margin stretch-card">-->
+<!--              <div class="card">-->
+<!--                <div class="card-body">-->
+<!--&lt;!&ndash;                  <h4 class="card-title">Striped Table</h4>&ndash;&gt;-->
+<!--                  <p class="card-description">-->
+<!--&lt;!&ndash;                    Add class <code>.table-striped</code>&ndash;&gt;-->
+<!--                  </p>-->
+<!--                  <div class="table-responsive">-->
+<!--                    <table class="table table-striped">-->
+<!--                      <thead>-->
+<!--                        <tr>-->
+<!--                          <th>-->
+<!--                            Date-->
+<!--                          </th>-->
+<!--                            <th>-->
+<!--                                Subject-->
+<!--                            </th>-->
+<!--                          <th>-->
+<!--                            Discription-->
+<!--                          </th>-->
+
+<!--                        </tr>-->
+<!--                      </thead>-->
+<!--                      <tbody>-->
+<!--                      {% for of in of %}-->
+<!--                        <tr>-->
+<!--                          <td class="py-1">-->
+<!--                            {{of.date}}-->
+<!--                          </td>-->
+<!--                            <td>-->
+<!--                                {{of.subject}}-->
+<!--                            </td>-->
+<!--                          <td>-->
+<!--                            {{of.description}}-->
+<!--                          </td>-->
+
+<!--                          <td>-->
+<!--                            <form action="{% url 'delete_notification' of.id %}" method="post">-->
+<!--                            {% csrf_token %}-->
+<!--                              <button type="submit" class="btn btn-danger">Delete</button>-->
+<!--                            </form>-->
+<!--                          <td>-->
+<!--                        </tr>-->
+<!--                      {% endfor %}-->
+<!--                      </tbody>-->
+<!--                    </table>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--{% endblock %}-->

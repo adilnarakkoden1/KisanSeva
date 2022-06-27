@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">OFFICERS TABLE</h4>
+                  <p class="card-description">
+<!--                    Add class <code>.table-striped</code>-->
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            E-Mail
+                          </th>
+                          <th>
+                            Address
+                          </th>
+                          <th>
+                            Gender
+                          </th>
+                          <th>
+                            Contact
+                          </th>
+                          <th>
+                            Edit
+                          </th>
+                          <th>
+                            Delete
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for of in of %}
+                        <tr>
+                          <td class="py-1">
+                            {{of.name}}
+                          </td>
+                          <td>
+                            {{of.email}}
+                          </td>
+                          <td>
+                            {{of.address}}
+                          </td>
+                          <td>
+                            {{of.gender}}
+                          </td>
+                          <td>
+                            {{of.contact_no}}
+                          </td>
+                          <td><a class="btn btn-primary" href="{% url 'update_officer' of.id %}" role="button">Edit</a></td>
+                          <td>
+                            <form action="{% url 'delete_officer' of.id %}" method="post">
+                            {% csrf_token %}
+                              <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                          <td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}
